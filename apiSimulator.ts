@@ -1,3 +1,19 @@
+export class NetworkError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "NetworkError";
+    }
+}
+
+export class DataError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "DataError";
+    }
+}
+
+
+
 export const fetchProductCatalog = (): Promise<{ id: number; name: string; price: number }[]> => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -41,3 +57,4 @@ export const fetchSalesReport = (): Promise<{ totalSales: number; unitsSold: num
         }, 1000);
     });
 };
+
